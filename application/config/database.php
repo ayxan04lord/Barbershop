@@ -79,7 +79,7 @@ $db['default'] = array(
 	
 	'username' => 'root',
 	'password' => '',
-	'database' => '',
+	'database' => 'xl_barbershop',
 	
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',

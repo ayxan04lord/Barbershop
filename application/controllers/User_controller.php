@@ -17,7 +17,6 @@ class User_controller extends CI_Controller{
         $this->load->view('user/gallery');
     }
 
-
     public function service(){
         $this->load->view('user/service');
     }

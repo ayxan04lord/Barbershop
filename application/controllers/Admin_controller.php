@@ -54,12 +54,15 @@ class Admin_controller extends CI_Controller{
                 's_name_az'        => $firstName_az,
                 's_surname_az'     => $lastName_az,
                 's_description_az' => $description_az,
+
                 's_name_en'        => $firstName_en,
                 's_surname_en'     => $lastName_en,
                 's_description_en' => $description_en,
+
                 's_name_ru'        => $firstName_ru,
                 's_surname_ru'     => $lastName_ru,
                 's_description_ru' => $description_ru,
+
                 's_position'       => $position,
                 's_status'         => $status,
                 's_email'          => $email,
@@ -71,6 +74,10 @@ class Admin_controller extends CI_Controller{
                 's_create_date'    => date("Y-m-d H:i:s"),
                 's_creater_id'     => "",
             ];
+
+            $this->db->insert('staff',$data);
+            redirect(base_url('a_staff_list'));
+
         }else{
             redirect($_SERVER['HTTP_REFERER']);
         }             
