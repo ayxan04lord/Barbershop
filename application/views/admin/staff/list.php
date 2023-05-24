@@ -50,6 +50,11 @@
                             </td>
                             <td>
                                 <a href="#" style="text-decoration: none;">
+                                    <button type="button" class="btn  btn-success" title="View">
+                                        <i class="fas fa-fw fa-eye"></i>
+                                    </button>
+                                </a>
+                                <a href="#" style="text-decoration: none;">
                                     <button type="button" class="btn  btn-warning" title="Update">
                                         <i class="fas fa-fw fa-pen"></i>
                                     </button>

@@ -3,6 +3,11 @@
 class Admin_controller extends CI_Controller
 {
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->model('Admin_model');
+    }
 
     public function index()
     {
@@ -20,7 +25,8 @@ class Admin_controller extends CI_Controller
 
     public function staff_list()
     {
-        $data['get_all_data'] = $this->db->order_by('s_id',"DESC")->get('staff')->result_array();
+
+        $data['get_all_data'] = $this->Admin_model->get_all_data();
         $this->load->view("admin/staff/list", $data);
     }
 
@@ -131,12 +137,12 @@ class Admin_controller extends CI_Controller
                 ];
             }
 
-
-
-            $this->db->insert('staff', $data);
+            $this->Admin_model->insert_staff($data);
             redirect(base_url('a_staff_list'));
         } else {
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
+
+    
 }
