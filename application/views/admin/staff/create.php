@@ -12,15 +12,6 @@
         <br>
         <h3 class="text-center text-white bg-primary py-2 rounded">Contact Information</h3>
         <br>
-
-
-
-
-
-
-
-
-
         <form action="<?php echo base_url('a_staff_create_act'); ?>" method="post" enctype="multipart/form-data">
 
             <!-- Nav pills -->
@@ -40,13 +31,17 @@
             <div class="tab-content">
                 <div class="tab-pane container active mx-0 px-0" id="home">
                     <div class="form-group row mt-3">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="FirstName"><b>First Name</b></label>
                             <input type="text" name="FirstName_az" class="form-control" id="FirstName" placeholder="First Name">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="LastName"><b>Last Name</b></label>
                             <input type="text" name="LastName_az" class="form-control" id="LastName" placeholder="Last Name">
+                        </div>
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label for="Email"><b>Email</b></label>
+                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description</b></label>
@@ -56,14 +51,18 @@
                 </div>
 
                 <div class="tab-pane container fade mx-0 px-0" id="menu1">
-                <div class="form-group row mt-3">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="form-group row mt-3">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="FirstName"><b>First Name EN</b></label>
                             <input type="text" name="FirstName_en" class="form-control" id="FirstName" placeholder="First Name">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="LastName"><b>Last Name EN</b></label>
                             <input type="text" name="LastName_en" class="form-control" id="LastName" placeholder="Last Name">
+                        </div>
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label for="Email"><b>Email</b></label>
+                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description EN</b></label>
@@ -73,14 +72,18 @@
                 </div>
 
                 <div class="tab-pane container fade mx-0 px-0" id="menu2">
-                <div class="form-group row mt-3">
-                        <div class="col-sm-6 mb-3 mb-sm-0">
+                    <div class="form-group row mt-3">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="FirstName"><b>First Name RU</b></label>
                             <input type="text" name="FirstName_ru" class="form-control" id="FirstName" placeholder="First Name">
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
                             <label for="LastName"><b>Last Name RU</b></label>
                             <input type="text" name="LastName_ru" class="form-control" id="LastName" placeholder="Last Name">
+                        </div>
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <label for="Email"><b>Email</b></label>
+                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description RU</b></label>
@@ -89,13 +92,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
-
-
 
             <div class="form-group">
                 <div class="row">
@@ -112,7 +108,7 @@
                         </select>
                     </div>
                     <div class="col-sm-4 mb-3 mb-sm-0">
-                        <label for="mob"><b>Mob</b></label>
+                        <label for="mob"><b>Mobile</b></label>
                         <input type="text" name="mobile" class="form-control" id="mob" placeholder="+994-- --- -- --">
                     </div>
                     <div class="col-sm-4 mb-3 mb-sm-0">
@@ -172,10 +168,10 @@
                             <option value="Deactive">Deactive</option>
                         </select>
                     </div>
-                    
-                    <div class="col-sm-4 mb-3 mb-sm-0">
-                        <label for="Email"><b>Email</b></label>
-                        <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
+
+                    <div class="col-sm-3 mb-3 mb-sm-0">
+                        <label for="Experience"><b>Experience</b></label>
+                        <input type="text" name="experience" class="form-control" id="Experience" placeholder="Enter Experience">
                     </div>
 
                     <div class="col-sm-3 mb-3 mb-sm-0">
