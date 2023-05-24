@@ -25,31 +25,33 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $say=0; foreach ($get_all_data as $get_all_data_key) { $say++ ?>
+                    <?php $say = 0;
+                    foreach ($get_all_data as $get_all_data_key) {
+                        $say++ ?>
                         <tr>
                             <td><?php echo $say ?></td>
                             <td><?php echo $get_all_data_key['s_name_az']; ?> <?php echo $get_all_data_key['s_surname_az']; ?></td>
                             <td><?php echo $get_all_data_key['s_position']; ?></td>
                             <td><?php echo $get_all_data_key['s_email']; ?></td>
                             <td>
-                                <?php if( $get_all_data_key['s_experience']){ ?>
-                                         <?php echo $get_all_data_key['s_experience']; ?>-il
+                                <?php if ($get_all_data_key['s_experience']) { ?>
+                                    <?php echo $get_all_data_key['s_experience']; ?>-il
 
-                                   <?php }else{
+                                <?php } else {
                                     echo "<b style='color:red'>Yoxdur!</b>";
-                                   } ?>
-                                
+                                } ?>
+
                             </td>
                             <td><?php echo $get_all_data_key['s_status']; ?></td>
                             <td>
-                                <?php if($get_all_data_key['s_img']){ ?>
-                                    <img width="50px" height="50px" style="object-fit: cover;" src="<?php echo base_url('uploads/staff/'.$get_all_data_key['s_img']) ?>" alt="">
-                              <?php  }else{ ?>
-                                <img width="50px" height="50px" style="object-fit: cover;" src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg" alt="">
-                            <?php  } ?>
+                                <?php if ($get_all_data_key['s_img']) { ?>
+                                    <img width="50px" height="50px" style="object-fit: cover;" src="<?php echo base_url('uploads/staff/' . $get_all_data_key['s_img']) ?>" alt="">
+                                <?php  } else { ?>
+                                    <img width="50px" height="50px" style="object-fit: cover;" src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg" alt="">
+                                <?php  } ?>
                             </td>
                             <td>
-                                <a href="#" style="text-decoration: none;">
+                                <a href="<?php echo base_url('a_detail_staff/' . $get_all_data_key['s_id']); ?>" style="text-decoration: none;">
                                     <button type="button" class="btn  btn-success" title="View">
                                         <i class="fas fa-fw fa-eye"></i>
                                     </button>
