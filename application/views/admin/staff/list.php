@@ -11,9 +11,10 @@
     </div>
     <div class="card-body">
         <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <table class="table table-bordered" id="dataTablea" width="100%" cellspacing="0">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Name Surname</th>
                         <th>Position</th>
                         <th>Email</th>
@@ -24,14 +25,29 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($get_all_data as $get_all_data_key) { ?>
+                    <?php $say=0; foreach ($get_all_data as $get_all_data_key) { $say++ ?>
                         <tr>
+                            <td><?php echo $say ?></td>
                             <td><?php echo $get_all_data_key['s_name_az']; ?> <?php echo $get_all_data_key['s_surname_az']; ?></td>
-                            <td><?php echo $get_all_data_key['s_position'] ?></td>
-                            <td><?php echo $get_all_data_key['s_email'] ?></td>
-                            <td><?php echo $get_all_data_key['s_experience'] ?></td>
-                            <td><?php echo $get_all_data_key['s_status'] ?></td>
-                            <td><?php echo $get_all_data_key['s_img'] ?></td>
+                            <td><?php echo $get_all_data_key['s_position']; ?></td>
+                            <td><?php echo $get_all_data_key['s_email']; ?></td>
+                            <td>
+                                <?php if( $get_all_data_key['s_experience']){ ?>
+                                         <?php echo $get_all_data_key['s_experience']; ?>-il
+
+                                   <?php }else{
+                                    echo "<b style='color:red'>Yoxdur!</b>";
+                                   } ?>
+                                
+                            </td>
+                            <td><?php echo $get_all_data_key['s_status']; ?></td>
+                            <td>
+                                <?php if($get_all_data_key['s_img']){ ?>
+                                    <img width="50px" height="50px" style="object-fit: cover;" src="<?php echo base_url('uploads/staff/'.$get_all_data_key['s_img']) ?>" alt="">
+                              <?php  }else{ ?>
+                                <img width="50px" height="50px" style="object-fit: cover;" src="https://thumbs.dreamstime.com/b/no-image-available-icon-flat-vector-no-image-available-icon-flat-vector-illustration-132482953.jpg" alt="">
+                            <?php  } ?>
+                            </td>
                             <td>
                                 <a href="#" style="text-decoration: none;">
                                     <button type="button" class="btn  btn-warning" title="Update">

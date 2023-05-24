@@ -20,8 +20,7 @@ class Admin_controller extends CI_Controller
 
     public function staff_list()
     {
-        $data['get_all_data'] = $this->db->get('staff')->result_array();
-
+        $data['get_all_data'] = $this->db->order_by('s_id',"DESC")->get('staff')->result_array();
         $this->load->view("admin/staff/list", $data);
     }
 
@@ -38,7 +37,7 @@ class Admin_controller extends CI_Controller
 
         $position       = $_POST['position'];
         $status         = $_POST['Status'];
-        $experience     = $_POST['Experience'];
+        $experience     = $_POST['experience'];
 
 
         $firstName_en   = $_POST['FirstName_en'];
