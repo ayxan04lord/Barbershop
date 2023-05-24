@@ -51,7 +51,7 @@
                                 <?php  } ?>
                             </td>
                             <td>
-                                <a href="<?php echo base_url('a_detail_staff/' . $get_all_data_key['s_id']); ?>" style="text-decoration: none;">
+                                <a href="<?php echo base_url('a_detail_staff/'.$get_all_data_key['s_id']); ?>" style="text-decoration: none;">
                                     <button type="button" class="btn  btn-success" title="View">
                                         <i class="fas fa-fw fa-eye"></i>
                                     </button>

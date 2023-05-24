@@ -147,5 +147,9 @@ class Admin_controller extends CI_Controller
     {
 
         $data["single_data"] = $this->Admin_model->get_single_staff($id);
+        // $this->load->view('admin/staff/details',$data);
+        // print_r("<pre>");
+        // print_r($data);
+        $this->load->view("admin/staff/details",$data);
     }
 }
