@@ -153,5 +153,7 @@ class Admin_controller extends CI_Controller
         $this->load->view("admin/staff/details",$data);
     }
 
-    
+    public function delete_staff($id){
+        $this->Admin_model->delete_staff($id);
+    }
 }
