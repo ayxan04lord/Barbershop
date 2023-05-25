@@ -5,7 +5,7 @@
 
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Staff Create</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Staff Create<a href="<?php echo base_url('a_staff_list'); ?>"><button type="button" style="float:right" class="btn btn-primary">To list</button></a></h6>
     </div>
     <div class="card-body">
 

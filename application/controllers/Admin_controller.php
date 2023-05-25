@@ -152,4 +152,6 @@ class Admin_controller extends CI_Controller
         // print_r($data);
         $this->load->view("admin/staff/details",$data);
     }
+
+    
 }
