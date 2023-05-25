@@ -12,7 +12,7 @@
         <br>
         <h3 class="text-center text-white bg-warning py-2 rounded">Contact Information</h3>
         <br>
-        <form action="<?php echo base_url('#'); ?>" method="post" enctype="multipart/form-data">
+        <form action="<?php echo base_url('a_edit_staff_act/'.$single_data['s_id']); ?>" method="post" enctype="multipart/form-data">
 
             <!-- Nav pills -->
             <ul class="nav nav-pills">
