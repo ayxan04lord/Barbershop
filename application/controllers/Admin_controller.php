@@ -60,6 +60,8 @@ class Admin_controller extends CI_Controller
         $facebook       = $_POST['Facebook'];
         $telegram       = $_POST['Telegram'];
         $youtube        = $_POST['Youtube'];
+        $instagram      = $_POST['Instagram'];
+
 
         if (!empty($firstName_az) && !empty($lastName_az) && !empty($description_az) && !empty($status) && !empty($position)) {
 
@@ -103,6 +105,7 @@ class Admin_controller extends CI_Controller
                     's_facebook'       => $facebook,
                     's_telegram'       => $telegram,
                     's_youtube'        => $youtube,
+                    's_instagram'      => $instagram,
                     's_img'            => $file_name,
                     's_img_ex'         => $file_ext,
                     's_create_date'    => date("Y-m-d H:i:s"),
@@ -131,6 +134,7 @@ class Admin_controller extends CI_Controller
                     's_facebook'       => $facebook,
                     's_telegram'       => $telegram,
                     's_youtube'        => $youtube,
+                    's_instagram'      => $instagram,
                     's_create_date'    => date("Y-m-d H:i:s"),
                     's_creater_id'     => "",
                 ];
@@ -155,5 +159,11 @@ class Admin_controller extends CI_Controller
 
     public function delete_staff($id){
         $this->Admin_model->delete_staff($id);
+    }
+
+    public function edit_staff($id){
+        $data['single_data']= $this->Admin_model->get_single_staff($id);
+
+        $this->load->view("admin/staff/update",$data);
     }
 }
