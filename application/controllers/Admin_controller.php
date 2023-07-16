@@ -8,7 +8,7 @@ class Admin_controller extends CI_Controller
         parent::__construct();
         $this->load->model('Admin_model');
     }
-
+    
     public function index()
     {
         $this->load->view("admin/login");
@@ -16,8 +16,37 @@ class Admin_controller extends CI_Controller
 
     public function login_action()
     {
+        $username = $_POST ['username'];
+        $password = $_POST ['password'];
+
+      if(!empty($username) && !empty($password)){
+            $data = [
+                'a_username' => $username,
+                'a_password' => md5($password),
+            ];
+
+            $checkUser = $this->db->select('a_id')->where($data)->get('admin')->row_array();
+
+            if($checkUser){
+                $_SESSION['admin_id'] = $checkUser['a_id'];
+                redirect(base_url('a_dashboard'));
+            }else{
+                $this->session->set_flashdata('err','Username ve ya password yanlisdir!');
+                redirect($_SERVER['HTTP_REFERER']);
+            }
+
+      }else{
+        $this->session->set_flashdata('err','Boşluq buraxmayın!');
+         redirect($_SERVER['HTTP_REFERER']);
+      }
+
     }
 
+    public function logOut(){
+        unset($_SESSION['admin_id']);
+        $this->session->set_flashdata('success','Sizi bir daha gözləyəcəyik!');
+        redirect(base_url("a_adminka"));
+    }
     public function dashboard()
     {
         $this->load->view("admin/index");
@@ -156,7 +185,6 @@ class Admin_controller extends CI_Controller
         // print_r($data);
         $this->load->view("admin/staff/details",$data);
     }
-
     public function delete_staff($id){
         $this->Admin_model->delete_staff($id);
     }

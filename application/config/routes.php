@@ -59,6 +59,7 @@ $route['service']   = "User_controller/service";
 
 $route['a_adminka']   = "Admin_controller/index";
 $route['a_login_act'] = "Admin_controller/login_action";
+$route['a_logOut'] = "Admin_controller/logOut";
 $route['a_dashboard'] = "Admin_controller/dashboard";
 
 // Product_side start
@@ -70,7 +71,7 @@ $route['a_detail_staff/(.*)'] = "Admin_controller/detail_staff/$1";
 $route['a_delete_staff/(.*)'] = "Admin_controller/delete_staff/$1";
 
 $route['a_edit_staff/(.*)'] = "Admin_controller/edit_staff/$1";
-$route['a_edit_staff_act/(.*)'] = "Admin_controller/edit_staff_act/$1";
+$route['a_edit_staff_act /(.*)'] = "Admin_controller/edit_staff_act/$1";
 // Product_side end
 
 
