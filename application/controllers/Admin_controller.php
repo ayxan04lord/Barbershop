@@ -8,7 +8,7 @@ class Admin_controller extends CI_Controller
         parent::__construct();
         $this->load->model('Admin_model');
     }
-    
+
     public function index()
     {
         $this->load->view("admin/login");
@@ -16,37 +16,39 @@ class Admin_controller extends CI_Controller
 
     public function login_action()
     {
-        $username = $_POST ['username'];
-        $password = $_POST ['password'];
+        $username = $_POST['username'];
+        $password = $_POST['password'];
 
-      if(!empty($username) && !empty($password)){
+        if (!empty($username) && !empty($password)) {
             $data = [
                 'a_username' => $username,
                 'a_password' => md5($password),
             ];
 
+            $data = $this->security->xss_clean($data);
+
             $checkUser = $this->db->select('a_id')->where($data)->get('admin')->row_array();
 
-            if($checkUser){
+            if ($checkUser) {
                 $_SESSION['admin_id'] = $checkUser['a_id'];
                 redirect(base_url('a_dashboard'));
-            }else{
-                $this->session->set_flashdata('err','Username ve ya password yanlisdir!');
+            } else {
+                $this->session->set_flashdata('err', 'Username ve ya password yanlisdir!');
                 redirect($_SERVER['HTTP_REFERER']);
             }
-
-      }else{
-        $this->session->set_flashdata('err','Boşluq buraxmayın!');
-         redirect($_SERVER['HTTP_REFERER']);
-      }
-
+        } else {
+            $this->session->set_flashdata('err', 'Boşluq buraxmayın!');
+            redirect($_SERVER['HTTP_REFERER']);
+        }
     }
 
-    public function logOut(){
+    public function logOut()
+    {
         unset($_SESSION['admin_id']);
-        $this->session->set_flashdata('success','Sizi bir daha gözləyəcəyik!');
+        $this->session->set_flashdata('success', 'Sizi bir daha gözləyəcəyik!');
         redirect(base_url("a_adminka"));
     }
+
     public function dashboard()
     {
         $this->load->view("admin/index");
@@ -61,7 +63,12 @@ class Admin_controller extends CI_Controller
 
     public function staff_create()
     {
-        $this->load->view("admin/staff/create");
+        $data['position'] = $this->db->get('position')->result_array();
+        $data['status'] = $this->db->get('status')->result_array();
+        // print_r("<pre>");
+        // print_r($data['position']);
+        // die();
+        $this->load->view("admin/staff/create", $data);
     }
 
     public function staff_create_act()
@@ -73,7 +80,6 @@ class Admin_controller extends CI_Controller
         $position       = $_POST['position'];
         $status         = $_POST['Status'];
         $experience     = $_POST['experience'];
-
 
         $firstName_en   = $_POST['FirstName_en'];
         $lastName_en    = $_POST['LastName_en'];
@@ -94,6 +100,19 @@ class Admin_controller extends CI_Controller
 
         if (!empty($firstName_az) && !empty($lastName_az) && !empty($description_az) && !empty($status) && !empty($position)) {
 
+            $checkPosition = $this->db->where('p_id', $position)->get('position')->row_array();
+            
+            if(!$checkPosition){
+            $this->session->set_flashdata("err","Position invalid!");
+            redirect($_SERVER['HTTP_REFERER']);
+            }
+
+            $checkStatus = $this->db->where('st_id', $status)->get('status')->row_array();
+            
+            if(!$checkStatus){
+            $this->session->set_flashdata("err","Status invalid!");
+            redirect($_SERVER['HTTP_REFERER']);
+            }
 
             $config['upload_path']          = './uploads/staff';
             $config['allowed_types']        = 'gif|jpg|png|jpeg|PNG|JPG|JPEG|PDF';
@@ -168,10 +187,11 @@ class Admin_controller extends CI_Controller
                     's_creater_id'     => "",
                 ];
             }
-
+            $data = $this->security->xss_clean($data);
             $this->Admin_model->insert_staff($data);
             redirect(base_url('a_staff_list'));
         } else {
+            $this->session->set_flashdata("err","Boşluq buraxmayın!");
             redirect($_SERVER['HTTP_REFERER']);
         }
     }
@@ -180,22 +200,26 @@ class Admin_controller extends CI_Controller
     {
 
         $data["single_data"] = $this->Admin_model->get_single_staff($id);
+        $data["single_data"] = $this->security->xss_clean($data["single_data"]);
         // $this->load->view('admin/staff/details',$data);
         // print_r("<pre>");
         // print_r($data);
-        $this->load->view("admin/staff/details",$data);
+        $this->load->view("admin/staff/details", $data);
     }
-    public function delete_staff($id){
+    public function delete_staff($id)
+    {
         $this->Admin_model->delete_staff($id);
     }
 
-    public function edit_staff($id){
-        $data['single_data']= $this->Admin_model->get_single_staff($id);
+    public function edit_staff($id)
+    {
+        $data['single_data'] = $this->Admin_model->get_single_staff($id);
 
-        $this->load->view("admin/staff/update",$data);
+        $this->load->view("admin/staff/update", $data);
     }
 
-    public function edit_staff_act($id){
+    public function edit_staff_act($id)
+    {
         $firstName_az   = $_POST['FirstName_az'];
         $lastName_az    = $_POST['LastName_az'];
         $description_az = $_POST['user_description_az'];
@@ -267,7 +291,7 @@ class Admin_controller extends CI_Controller
                     's_create_date'    => date("Y-m-d H:i:s"),
                     's_creater_id'     => "",
                 ];
-            }else{
+            } else {
                 $data = [
                     's_name_az'        => $firstName_az,
                     's_surname_az'     => $lastName_az,
@@ -295,14 +319,13 @@ class Admin_controller extends CI_Controller
                     's_creater_id'     => "",
                 ];
             }
+            $data = $this->security->xss_clean($data);
+            $id = $this->security->xss_clean($id);
 
             $this->Admin_model->update_staff($id, $data);
             redirect(base_url('a_staff_list'));
-
-        }else{
+        } else {
             redirect($_SERVER['HTTP_REFERER']);
         }
-
-
     }
 }

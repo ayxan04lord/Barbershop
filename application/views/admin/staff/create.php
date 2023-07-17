@@ -1,6 +1,3 @@
-
-
-
 <?php $this->load->view('admin/includes/header_style'); ?>
 <?php $this->load->view('admin/includes/left_menu'); ?>
 <?php $this->load->view('admin/includes/navbar'); ?>
@@ -12,6 +9,11 @@
     </div>
     <div class="card-body">
 
+        <?php if ($this->session->flashdata("err")) { ?>
+            <div class="alert alert-danger">
+            <h1><?php echo $this->session->flashdata("err"); ?></h1>
+            </div>
+            <?php } ?>
         <br>
         <h3 class="text-center text-white bg-primary py-2 rounded">Contact Information</h3>
         <br>
@@ -91,11 +93,9 @@
                         <label for="Position"><b>Position</b></label>
                         <select name="position" id="Position" class="form-control">
                             <option value="">-SELECT-</option>
-                            <option value="Director">Director</option>
-                            <option value="Manager">Manager</option>
-                            <option value="Master">Master</option>
-                            <option value="Asistent">Asistent</option>
-                            <option value="Other">Other</option>
+                            <?php foreach ($position as $item) { ?>
+                                <option value="<?php echo $item['p_id']; ?>"><?php echo $item['p_name_az']; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="col-sm-4 mb-3 mb-sm-0">
@@ -155,8 +155,9 @@
                         <label for="Status"><b>Status</b></label>
                         <select name="Status" id="Status" class="form-control">
                             <option value="">-SELECT-</option>
-                            <option value="Active">Active</option>
-                            <option value="Deactive">Deactive</option>
+                            <?php foreach ($status as $item) { ?>
+                                <option value="<?php echo $item['st_id']; ?>"><?php echo $item['st_name_az']; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
 
@@ -166,8 +167,8 @@
                     </div>
 
                     <div class="col-sm-3 mb-3 mb-sm-0">
-                            <label for="Email"><b>Email</b></label>
-                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
+                        <label for="Email"><b>Email</b></label>
+                        <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
                     </div>
 
                     <div class="col-sm-3 mb-3 mb-sm-0">
