@@ -55,6 +55,7 @@ $route['about']     = "User_controller/about";
 $route['contact']   = "User_controller/contact";
 $route['gallery']   = "User_controller/gallery";
 $route['service']   = "User_controller/service";
+$route['staff']     = "User_controller/staff";
 
 
 $route['a_adminka']   = "Admin_controller/index";

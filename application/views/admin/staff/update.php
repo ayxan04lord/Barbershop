@@ -13,8 +13,8 @@
         <h3 class="text-center text-white bg-warning py-2 rounded">Contact Information</h3>
         <br>
         <form action="<?php echo base_url('a_edit_staff_act/'.$single_data['s_id']); ?>" method="post" enctype="multipart/form-data">
-
-            <!-- Nav pills -->
+        <input type="hidden" name="<?= $this->security->get_scrf_token_name(); ?>" value="<?= $this->security->get_scrf_hash(); ?>" />
+        <!-- Nav pills -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="pill" href="#home">AZE</a>

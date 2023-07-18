@@ -207,7 +207,11 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item">
                             <div class="team-img position-relative overflow-hidden">
+                                <?php if($item['s_img']){ ?>
                                 <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit;hover;" src="<?php echo base_url('uploads/staff/' . $item['s_img']); ?>" alt="">
+                                <?php } else{ ?>
+                                <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit:contain;" src="http://localhost/barbershop/public/assets/img/image-07-08-22-10-34.png" alt="">
+                                <?php }  ?>
                                 <div class="team-social">
                                     <?php if ($item['s_whatsApp']) { ?>
                                     <a target="_blank" class="btn btn-square" href="https://wa.me/<?php echo $item['s_whatsApp']; ?>"><i style="color: #D7B56D !important" class="fab fa-whatsapp"></i></a>

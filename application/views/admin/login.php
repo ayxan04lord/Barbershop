@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Login</title>
+    <title>Admin - Login</title>
 
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('public/admin/assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,8 @@
                                         <h1 class="h4 text-gray-900 mb-4">Admin</h1>
                                     </div>
                                     <form class="user" action="<?php echo base_url('a_login_act') ?>" method="post">
-                                        <div class="form-group">
+                                    <input type="hidden" name="<?= $this->security->get_scrf_token_name(); ?>" value="<?= $this->security->get_scrf_hash(); ?>" />
+                                    <div class="form-group">
                                             <label for="exampleInputEmail">Username</label>
                                             <input type="text" name="username" autocomplete="off" class="form-control form-control-user" id="exampleInputEmail" placeholder="Enter Username">
                                         </div>
