@@ -18,7 +18,7 @@
         <h3 class="text-center text-white bg-primary py-2 rounded">Contact Information</h3>
         <br>
         <form action="<?php echo base_url('a_staff_create_act'); ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="<?= $this->security->get_scrf_token_name(); ?>" value="<?= $this->security->get_scrf_hash();?>" />
+        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash();?>">
         <!-- Nav pills -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
@@ -119,11 +119,11 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Facebook"><b>Facebook</b></label>
-                        <input type="text" name="Facebook" class="form-control" id="Facebook" placeholder="Facebook">
+                        <input type="text" name="Facebook" class="form-control" id="Facebook" placeholder="https://www.....">
                     </div>
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Instagram"><b>Instagram</b></label>
-                        <input type="text" name="Instagram" class="form-control" id="Instagram" placeholder="Instagram">
+                        <input type="text" name="Instagram" class="form-control" id="Instagram" placeholder="https://www.....">
                     </div>
                 </div>
             </div>
@@ -132,12 +132,12 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Telegram"><b>Telegram</b></label>
-                        <input type="text" name="Telegram" class="form-control" id="Telegram" placeholder="https://www.....">
+                        <input type="text" name="Telegram" class="form-control" id="Telegram" placeholder="+994-- --- -- --">
                     </div>
 
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Youtube"><b>Youtube</b></label>
-                        <input type="text" name="Youtube" class="form-control" id="Youtube" placeholder="Youtube">
+                        <input type="text" name="Youtube" class="form-control" id="Youtube" placeholder="https://www.....">
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
 
                     <div class="col-sm-3 mb-3 mb-sm-0">
                         <label for="Email"><b>Email</b></label>
-                        <input type="text" name="Email" class="form-control" id="Email" placeholder="Email">
+                        <input type="text" name="Email" class="form-control" id="Email" placeholder="Enter Email">
                     </div>
 
                     <div class="col-sm-3 mb-3 mb-sm-0">

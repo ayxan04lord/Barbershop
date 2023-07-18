@@ -31,7 +31,7 @@
 
             <tr>
                 <th>Name Surname en</th>
-                <td><?php echo $single_data['s_name_en'];?> <?php echo $single_data['s_surname_en'];?>?></td>
+                <td><?php echo $single_data['s_name_en'];?> <?php echo $single_data['s_surname_en'];?></td>
             </tr>
 
             <tr>

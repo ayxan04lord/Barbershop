@@ -50,22 +50,23 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'User_controller';
-$route['home']      = "User_controller/index";
-$route['about']     = "User_controller/about";
-$route['contact']   = "User_controller/contact";
-$route['gallery']   = "User_controller/gallery";
-$route['service']   = "User_controller/service";
-$route['staff']     = "User_controller/staff";
+$route['home']               = "User_controller/index";
+$route['about']              = "User_controller/about";
+$route['contact']            = "User_controller/contact";
+$route['gallery']            = "User_controller/gallery";
+$route['service']            = "User_controller/service";
+$route['staff']              = "User_controller/staff";
+$route['staff_single/(.*)']  = "User_controller/staff_single/$1";
 
 
 $route['a_adminka']   = "Admin_controller/index";
 $route['a_login_act'] = "Admin_controller/login_action";
-$route['a_logOut'] = "Admin_controller/logOut";
+$route['a_logOut']    = "Admin_controller/logOut";
 $route['a_dashboard'] = "Admin_controller/dashboard";
 
 // Product_side start
-$route['a_staff_list'] = "Admin_controller/staff_list";
-$route['a_staff_create'] = "Admin_controller/staff_create";
+$route['a_staff_list']       = "Admin_controller/staff_list";
+$route['a_staff_create']     = "Admin_controller/staff_create";
 $route['a_staff_create_act'] = "Admin_controller/staff_create_act";
 
 $route['a_detail_staff/(.*)'] = "Admin_controller/detail_staff/$1";

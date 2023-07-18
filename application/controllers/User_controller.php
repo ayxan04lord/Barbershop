@@ -43,4 +43,20 @@ class User_controller extends CI_Controller{
         // die();
         $this->load->view('user/staff', $data);
     }
+
+    public function staff_single($id){
+        $id = $this->security->xss_clean($id);
+        $data['single_staff'] = $this->User_model->get_single_staff($id);
+
+        if($data['single_staff']){
+            $this->User_model->get_single_staff($id);
+        }else{
+            redirect(base_url('staff'));
+        }
+        // print_r('<pre>');
+        // print_r($data['single_staff']);
+        // die();
+        $this->load->view('user/staff_single',$data);
+
+    }
 }

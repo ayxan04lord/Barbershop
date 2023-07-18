@@ -13,7 +13,7 @@
         <h3 class="text-center text-white bg-warning py-2 rounded">Contact Information</h3>
         <br>
         <form action="<?php echo base_url('a_edit_staff_act/'.$single_data['s_id']); ?>" method="post" enctype="multipart/form-data">
-        <input type="hidden" name="<?= $this->security->get_scrf_token_name(); ?>" value="<?= $this->security->get_scrf_hash(); ?>" />
+        <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash(); ?>">
         <!-- Nav pills -->
             <ul class="nav nav-pills">
                 <li class="nav-item">
@@ -116,11 +116,11 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Facebook"><b>Facebook</b></label>
-                        <input type="text" name="Facebook" class="form-control" id="Facebook" placeholder="Facebook" value="<?php echo $single_data['s_facebook']; ?>">
+                        <input type="text" name="Facebook" class="form-control" id="Facebook" placeholder="https://www....." value="<?php echo $single_data['s_facebook']; ?>">
                     </div>
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Instagram"><b>Instagram</b></label>
-                        <input type="text" name="Instagram" class="form-control" id="Instagram" placeholder="Instagram" value="<?php echo $single_data['s_instagram']; ?>">
+                        <input type="text" name="Instagram" class="form-control" id="Instagram" placeholder="https://www....." value="<?php echo $single_data['s_instagram']; ?>">
                     </div>
                 </div>
             </div>
@@ -129,12 +129,12 @@
                 <div class="row">
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Telegram"><b>Telegram</b></label>
-                        <input type="text" name="Telegram" class="form-control" id="Telegram" placeholder="https://www....." value="<?php echo $single_data['s_telegram'] ?>">
+                        <input type="text" name="Telegram" class="form-control" id="Telegram" placeholder="+994-- --- -- --" value="<?php echo $single_data['s_telegram'] ?>">
                     </div>
 
                     <div class="col-sm-6 mb-3 mb-sm-0">
                         <label for="Youtube"><b>Youtube</b></label>
-                        <input type="text" name="Youtube" class="form-control" id="Youtube" placeholder="Youtube" value="<?php echo $single_data['s_youtube'] ?>">
+                        <input type="text" name="Youtube" class="form-control" id="Youtube" placeholder="https://www....." value="<?php echo $single_data['s_youtube'] ?>">
                     </div>
                 </div>
             </div>
@@ -164,7 +164,7 @@
 
                     <div class="col-sm-3 mb-3 mb-sm-0">
                             <label for="Email"><b>Email</b></label>
-                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Email" value="<?php echo $single_data['s_email'] ?>">
+                            <input type="text" name="Email" class="form-control" id="Email" placeholder="Enter Email" value="<?php echo $single_data['s_email'] ?>">
                     </div>
 
                     <div class="col-sm-3 mb-3 mb-sm-0">

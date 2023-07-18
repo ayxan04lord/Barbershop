@@ -12,6 +12,7 @@
         <div class="navbar-nav ms-auto p-4 p-lg-0">
          
             <a href="<?php echo base_url('home'); ?>" class="nav-item nav-link <?php if($segment == 'home' || $segment == ''){ ?> active <?php } ?> ">Ana səhifə</a>
+            <a href="<?php echo base_url('staff'); ?>" class="nav-item nav-link <?php if($segment == 'staff' ){ ?> active <?php } ?> ">Ustalarımız</a>
             <a href="<?php echo base_url('about'); ?>" class="nav-item nav-link <?php if($segment == 'about'){ ?> active <?php } ?>">Haqqımızda</a>
             <a href="<?php echo base_url('service'); ?>" class="nav-item nav-link <?php if($segment == 'service'){ ?> active <?php } ?>">Xidmətlər</a>
             <!--   <a href="price.html" class="nav-item nav-link">Qiymətlər</a> -->

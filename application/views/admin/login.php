@@ -39,9 +39,9 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Admin</h1>
                                     </div>
-                                    <form class="user" action="<?php echo base_url('a_login_act') ?>" method="post">
-                                    <input type="hidden" name="<?= $this->security->get_scrf_token_name(); ?>" value="<?= $this->security->get_scrf_hash(); ?>" />
-                                    <div class="form-group">
+                                    <form class="user" action="<?php echo base_url('a_login_act'); ?>" method="post">
+                                    <input type="hidden" name="<?php echo $this->security->get_csrf_token_name(); ?>" value="<?php echo $this->security->get_csrf_hash();?>">
+                                        <div class="form-group">
                                             <label for="exampleInputEmail">Username</label>
                                             <input type="text" name="username" autocomplete="off" class="form-control form-control-user" id="exampleInputEmail" placeholder="Enter Username">
                                         </div>
@@ -74,7 +74,6 @@
             </div>
 
         </div>
-
         <!-- Bootstrap core JavaScript-->
         <script src="<?php echo base_url('public/admin/assets/'); ?>vendor/jquery/jquery.min.js"></script>
         <script src="<?php echo base_url('public/admin/assets/'); ?>vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

@@ -44,7 +44,7 @@
                                 </div>
                             </div>
                             <div class="bg-secondary text-center p-4">
-                                <h5><?php echo $item['s_name_az']; ?></h5>
+                                <h5><a href="<?php echo base_url('staff_single/'.$item['s_id']) ?>"><?php echo $item['s_name_az']; ?></a></h5>
                                 <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['p_name_az']; ?></span>
                             </div>
                         </div>
