@@ -3,6 +3,10 @@
 class Admin_model extends CI_Model
 {
 
+    public function get_so_position(){
+        return $this->db->get("position")->result_array();
+    }
+    
     public function insert_staff($data)
     {
         $this->db->insert('staff', $data);
@@ -25,6 +29,6 @@ class Admin_model extends CI_Model
     }
 
     public function update_staff($id, $data){
-        $this->db->where('s_id', $id)->update('staff', $data);
+        return $this->db->where('s_id', $id)->update('staff', $data);
     }
 }

@@ -214,7 +214,7 @@ class Admin_controller extends CI_Controller
     public function edit_staff($id)
     {
         $data['single_data'] = $this->Admin_model->get_single_staff($id);
-
+        $data["get_so_position"] = $this->Admin_model->get_so_position();
         $this->load->view("admin/staff/update", $data);
     }
 

@@ -71,7 +71,7 @@ $route['a_detail_staff/(.*)'] = "Admin_controller/detail_staff/$1";
 $route['a_delete_staff/(.*)'] = "Admin_controller/delete_staff/$1";
 
 $route['a_edit_staff/(.*)'] = "Admin_controller/edit_staff/$1";
-$route['a_edit_staff_act /(.*)'] = "Admin_controller/edit_staff_act/$1";
+$route['a_edit_staff_act/(.*)'] = "Admin_controller/edit_staff_act/$1";
 // Product_side end
 
 

@@ -88,11 +88,11 @@
                         <label for="Position"><b>Position</b></label>
                         <select name="position" id="Position" class="form-control">
                             <option value="">-SELECT-</option>
-                            <option <?php if($single_data['s_position'] == "Director"){ echo "SELECTED";}?> value="Director">Director</option>
-                            <option <?php if($single_data['s_position'] == "Manager"){ echo "SELECTED";}?> value="Manager">Manager</option>
-                            <option <?php if($single_data['s_position'] == "Master"){ echo "SELECTED";}?> value="Master">Master</option>
-                            <option <?php if($single_data['s_position'] == "Asistent"){ echo "SELECTED";}?> value="Asistent">Asistent</option>
-                            <option <?php if($single_data['s_position'] == "Other"){ echo "SELECTED";}?> value="Other">Other</option>
+                            <?php foreach ($get_so_position as $get_so_positionKey) { ?>
+                                <option <?php if ($single_data['s_position'] == "Director") {
+                                            echo "SELECTED";
+                                        } ?> value="<?php echo $get_so_positionKey["p_id"]; ?>"><?php echo $get_so_positionKey["p_name_az"]; ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <div class="col-sm-4 mb-3 mb-sm-0">

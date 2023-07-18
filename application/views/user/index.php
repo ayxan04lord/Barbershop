@@ -207,10 +207,10 @@
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item">
                             <div class="team-img position-relative overflow-hidden">
-                                <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit;hover; " src="<?php echo base_url('uploads/staff/' . $item['s_img']); ?>" alt="">
+                                <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit;hover;" src="<?php echo base_url('uploads/staff/' . $item['s_img']); ?>" alt="">
                                 <div class="team-social">
                                     <?php if ($item['s_whatsApp']) { ?>
-                                    <a target="_blank" class="btn btn-square" href="<?php echo $item['s_whatsApp']; ?>"><i style="color: #D7B56D !important" class="fab fa-whatsapp"></i></a>
+                                    <a target="_blank" class="btn btn-square" href="https://wa.me/<?php echo $item['s_whatsApp']; ?>"><i style="color: #D7B56D !important" class="fab fa-whatsapp"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_facebook']) { ?>
                                     <a target="_blank" class="btn btn-square" href="<?php echo $item['s_facebook']; ?>"><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
@@ -228,7 +228,7 @@
                             </div>
                             <div class="bg-secondary text-center p-4">
                                 <h5><?php echo $item['s_name_az']; ?></h5>
-                                <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['s_position']; ?></span>
+                                <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['p_name_az']; ?></span>
                             </div>
                         </div>
                     </div>
