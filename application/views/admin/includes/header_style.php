@@ -16,6 +16,9 @@ if(!isset($_SESSION['admin_id'])){
     <meta name="author" content="">
 
     <title>Dashboard</title>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.4.1/css/buttons.dataTables.min.css">
     <link href="<?php echo base_url('public/admin/assets/'); ?>vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Custom fonts for this template-->
     <link href="<?php echo base_url('public/admin/assets/'); ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

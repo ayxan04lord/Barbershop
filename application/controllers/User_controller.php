@@ -6,6 +6,7 @@ class User_controller extends CI_Controller{
         parent::__construct();
         $this->load->model('User_model');
         $this->load->library('pagination');
+        $this->lang->load('message','en');
     }
 
     public function index(){

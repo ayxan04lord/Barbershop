@@ -16,10 +16,10 @@
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4"><?php echo $single_staff['p_name_az']; ?></p>
-                <h2 class="mb-4"><?php echo $single_staff['s_name_az']; ?> <?php echo $single_staff['s_surname_az']; ?></h2>
-                <p>İş təcrübəsi: <?php echo $single_staff['s_experience']; ?> il</p>
-                <p><?php echo $single_staff['s_description_az']; ?></p>
+            <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4"><?php echo $single_staff['p_name_'.$this->session->userdata('site_lang')]; ?></p>
+                <h2 class="mb-4"><?php echo $single_staff['s_name_'.$this->session->userdata('site_lang')]; ?> <?php echo $single_staff['s_surname_'.$this->session->userdata('site_lang')]; ?></h2>
+                <p><?php echo $this->lang->line('exp'); ?> <?php echo $single_staff['s_experience']; ?> <?php echo $this->lang->line('year'); ?></p>
+                <p class="mb-4"><?php echo $single_staff['s_description_'.$this->session->userdata('site_lang')]; ?></p>
                 <style>
                     .team-social a{
                         float: left;

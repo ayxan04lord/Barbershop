@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                    <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4">Haqqımızda</p>
+                <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4"><?php echo $this->lang->line('about'); ?></p>
                     <h2 class="mb-4">Bizimlə bağlı ətraflı məlumat əldə edin!</h2>
                     <p>XL Barbershop yeni açılmasına baxmayaraq uzun illərdir bu sahədə fəaliyyət görsədən ustaların möhtəşəm əl qabiliyyətləri sayəsində sizləri məmnun etməkdədir.</p>
                     <p class="mb-4">Bir çox sahə üzrə xidmət göstərməyimiz, müasir avadanlıqlarımız, müştərilərimizin rahatlığı üçün təqdim edilən şərait bizi bir çox kişi salonundan fərqləndirən faktorlardır.</p>
@@ -234,8 +234,10 @@
                                 </div>
                             </div>
                             <div class="bg-secondary text-center p-4">
-                                <h5><?php echo $item['s_name_az']; ?></h5>
-                                <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['p_name_az']; ?></span>
+                            <a href="<?php echo base_url('staff_single/'.$item['s_id']); ?>">
+                                <h5><?php echo $item['s_name_'.$this->session->userdata('site_lang')]; ?></h5>
+                                </a>
+                                <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['p_name_'.$this->session->userdata('site_lang')]; ?></span>
                             </div>
                         </div>
                     </div>

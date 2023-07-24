@@ -10,15 +10,22 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarCollapse">
         <div class="navbar-nav ms-auto p-4 p-lg-0">
-         
-            <a href="<?php echo base_url('home'); ?>" class="nav-item nav-link <?php if($segment == 'home' || $segment == ''){ ?> active <?php } ?> ">Ana səhifə</a>
-            <a href="<?php echo base_url('staff'); ?>" class="nav-item nav-link <?php if($segment == 'staff' ){ ?> active <?php } ?> ">Ustalarımız</a>
-            <a href="<?php echo base_url('about'); ?>" class="nav-item nav-link <?php if($segment == 'about'){ ?> active <?php } ?>">Haqqımızda</a>
-            <a href="<?php echo base_url('service'); ?>" class="nav-item nav-link <?php if($segment == 'service'){ ?> active <?php } ?>">Xidmətlər</a>
-            <!--   <a href="price.html" class="nav-item nav-link">Qiymətlər</a> -->
+        <a href="<?php echo base_url('home'); ?>" class="nav-item nav-link <?php if ($segment == 'home' || $segment == '') { ?> active <?php } ?> ">
+            <?php echo $this->lang->line('home'); ?>
+            </a>
+            <a href="<?php echo base_url('staff'); ?>" class="nav-item nav-link <?php if ($segment == 'staff') { ?> active <?php } ?> "><?php echo $this->lang->line('staff'); ?></a>
+            <a href="<?php echo base_url('about'); ?>" class="nav-item nav-link <?php if ($segment == 'about') { ?> active <?php } ?>"><?php echo $this->lang->line('about'); ?></a>
+            <a href="<?php echo base_url('service'); ?>" class="nav-item nav-link <?php if ($segment == 'service') { ?> active <?php } ?>"><?php echo $this->lang->line('services'); ?></a>
+                        <!--   <a href="price.html" class="nav-item nav-link">Qiymətlər</a> -->
             <!-- <a href="team.html" class="nav-item nav-link">Ustalar</a> -->
-            <a href="<?php echo base_url('gallery'); ?>" class="nav-item nav-link <?php if($segment == 'gallery'){ ?> active <?php } ?>">Qalereya </a>
-            <a href="<?php echo base_url('contact'); ?>" class="nav-item nav-link <?php if($segment == 'contact'){ ?> active <?php } ?>">Əlaqə</a>
+            <a href="<?php echo base_url('gallery'); ?>" class="nav-item nav-link <?php if ($segment == 'gallery') { ?> active <?php } ?>"><?php echo $this->lang->line('gallery'); ?> </a>
+            <a href="<?php echo base_url('contact'); ?>" class="nav-item nav-link <?php if ($segment == 'contact') { ?> active <?php } ?>"><?php echo $this->lang->line('contact'); ?></a>
+
+            <select onchange="javascript:window.location.href='<?php echo base_url(); ?>LanguageSwitcher/switchLang/'+this.value;">
+                <option value="az" <?php if ($this->session->userdata('site_lang') == 'az') echo 'selected="selected"'; ?>>AZE</option>
+                <option value="en" <?php if ($this->session->userdata('site_lang') == 'en') echo 'selected="selected"'; ?>>ENG</option>
+                <option value="ru" <?php if ($this->session->userdata('site_lang') == 'ru') echo 'selected="selected"'; ?>>RUS</option>
+            </select>
         </div>
     </div>
 </nav>
