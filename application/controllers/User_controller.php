@@ -5,6 +5,7 @@ class User_controller extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('User_model');
+        $this->load->library('pagination');
     }
 
     public function index(){
@@ -37,7 +38,30 @@ class User_controller extends CI_Controller{
     }
 
     public function staff(){
-        $data['staff'] = $this->User_model->u_get_all_staff();
+        $config['base_url'] = base_url('staff');
+        $config['total_rows']  = $this->db->count_all("staff");
+        $config['uri_segment'] = 2;
+        $config['per_page'] = 3;
+        $config['num_links'] = 4;
+
+        // $config['page_query_string'] = TRUE;
+        $config['use_page_numbers'] = TRUE;
+        // $config['next_link'] = 'Əvvəl';
+        // $config['last_link'] = 'Son';
+
+
+        $this->pagination->initialize($config);
+
+        $page = ($this->uri->segment(2)) ? $this->uri->segment(2) : 0;
+        $data['links'] = $this->pagination->create_links();
+
+
+        $data['staff'] = $this->User_model->u_get_all_staff($config,$page);
+
+        if(!$data['staff']){
+            redirect(base_url('home'));
+        }
+
         // print_r('<pre>');
         // print_r($data['staff']);
         // die();

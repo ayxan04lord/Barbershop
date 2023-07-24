@@ -56,6 +56,7 @@ $route['contact']            = "User_controller/contact";
 $route['gallery']            = "User_controller/gallery";
 $route['service']            = "User_controller/service";
 $route['staff']              = "User_controller/staff";
+$route['staff/(.*)']         = "User_controller/staff/$1";
 $route['staff_single/(.*)']  = "User_controller/staff_single/$1";
 
 

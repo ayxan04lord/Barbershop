@@ -1,6 +1,33 @@
 <?php $this->load->view('user/includes/headerStyle'); ?>
 <?php $this->load->view('user/includes/preloader'); ?>
 <?php $this->load->view('user/includes/navbar'); ?>
+<style>
+    .pagination a,
+    .pagination strong {
+        padding: 10px 10px;
+        border: 1px solid #D7B56D !important;
+        margin-left: 5px;
+        text-decoration: none;
+        box-shadow: 0 0 8px rgba(5, 5, 5, 0.3);
+    }
+    .pagination strong {
+        background: #D7B56D !important;
+        color: white;
+        border: 1px solid #D7B56D !important;
+    }
+
+    .pagination {
+        margin: 20px 0px;
+        justify-content: center;
+    }
+
+    a:visited {
+        color: white;
+    }
+    a:link {
+        color: white;
+    }
+</style>
 
 
 <!-- Team Start -->
@@ -52,6 +79,7 @@
                 <?php  } ?>
 
             </div>
+            <p class="pagination wow fadeInUp"><?php echo $links; ?></p>
         </div>
     </div>
     <!-- Team End -->
