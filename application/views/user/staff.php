@@ -63,7 +63,7 @@
                                         <a target="_blank" class="btn btn-square" href="<?php echo $item['s_instagram']; ?>"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_telegram']) { ?>
-                                        <a target="_blank" class="btn btn-square" href="<?php echo $item['s_telegram']; ?>"><i style="color: #D7B56D !important" class="fab fa-telegram"></i></a>
+                                        <a target="_blank" class="btn btn-square" href="https://t.me/<?php echo $item['s_telegram']; ?>"><i style="color: #D7B56D !important" class="fab fa-telegram"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_youtube']) { ?>
                                         <a target="_blank" class="btn btn-square" href="<?php echo $item['s_youtube']; ?>"><i style="color: #D7B56D !important" class="fab fa-youtube"></i></a>

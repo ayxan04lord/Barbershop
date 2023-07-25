@@ -46,7 +46,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description</b></label>
-                            <textarea name="user_description_az" id="description" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="user_description_az" id="description" cols="30" rows="5" class="form-control ckeditor"></textarea>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description EN</b></label>
-                            <textarea name="user_description_en" id="description" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="user_description_en" id="description" cols="30" rows="5" class="form-control ckeditor"></textarea>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description RU</b></label>
-                            <textarea name="user_description_ru" id="description" cols="30" rows="5" class="form-control"></textarea>
+                            <textarea name="user_description_ru" id="description" cols="30" rows="5" class="form-control ckeditor"></textarea>
                         </div>
                     </div>
                 </div>

@@ -41,7 +41,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description</b></label>
-                            <textarea name="user_description_az" id="description" cols="30" rows="5" class="form-control"><?php echo $single_data['s_description_az']; ?></textarea>
+                            <textarea name="user_description_az" id="description" cols="30" rows="5" class="form-control ckeditor"><?php echo $single_data['s_description_az']; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description EN</b></label>
-                            <textarea name="user_description_en" id="description" cols="30" rows="5" class="form-control"><?php echo $single_data['s_description_en']; ?></textarea>
+                            <textarea name="user_description_en" id="description" cols="30" rows="5" class="form-control ckeditor"><?php echo $single_data['s_description_en']; ?></textarea>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="col-sm-12 mb-3 mb-sm-0 mt-3">
                             <label for="description"><b>Description RU</b></label>
-                            <textarea name="user_description_ru" id="description" cols="30" rows="5" class="form-control"><?php echo $single_data['s_description_ru'] ?></textarea>
+                            <textarea name="user_description_ru" id="description" cols="30" rows="5" class="form-control ckeditor"><?php echo $single_data['s_description_ru'] ?></textarea>
                         </div>
                     </div>
                 </div>

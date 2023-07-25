@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4"><?php echo $this->lang->line('about'); ?></p>
+                    <p style="color: #D7B56D !important" class="d-inline-block bg-secondary text-primary py-1 px-4"><?php echo $this->lang->line('about'); ?></p>
                     <h2 class="mb-4">Bizimlə bağlı ətraflı məlumat əldə edin!</h2>
                     <p>XL Barbershop yeni açılmasına baxmayaraq uzun illərdir bu sahədə fəaliyyət görsədən ustaların möhtəşəm əl qabiliyyətləri sayəsində sizləri məmnun etməkdədir.</p>
                     <p class="mb-4">Bir çox sahə üzrə xidmət göstərməyimiz, müasir avadanlıqlarımız, müştərilərimizin rahatlığı üçün təqdim edilən şərait bizi bir çox kişi salonundan fərqləndirən faktorlardır.</p>
@@ -202,25 +202,25 @@
             </div>
             <div class="row g-4">
                 <?php
-                foreach ($staff as $item) { ?>
+                 foreach ($staff as $item) { ?>
 
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item">
                             <div class="team-img position-relative overflow-hidden">
-                                <?php if($item['s_img']){ ?>
-                                <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit;hover;" src="<?php echo base_url('uploads/staff/' . $item['s_img']); ?>" alt="">
-                                <?php } else{ ?>
-                                <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit:contain;" src="http://localhost/barbershop/public/assets/img/image-07-08-22-10-34.png" alt="">
+                                <?php if ($item['s_img']) { ?>
+                                    <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit;hover;" src="<?php echo base_url('uploads/staff/' . $item['s_img']); ?>" alt="">
+                                <?php } else { ?>
+                                    <img class="img-fluid" style="height: 425px!important;width:100%!important; object-fit:contain;" src="http://localhost/barbershop/public/assets/img/image-07-08-22-10-34.png" alt="">
                                 <?php }  ?>
                                 <div class="team-social">
                                     <?php if ($item['s_email']) { ?>
-                                    <a target="_blank" class="btn btn-square" href="mailto:<?php echo $item['s_email']; ?>"><i style="color: #D7B56D !important" class="fas fa-envelope"></i></a>
+                                        <a target="_blank" class="btn btn-square" href="mailto:<?php echo $item['s_email']; ?>"><i style="color: #D7B56D !important" class="fas fa-envelope"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_whatsApp']) { ?>
-                                    <a target="_blank" class="btn btn-square" href="https://wa.me/<?php echo $item['s_whatsApp']; ?>"><i style="color: #D7B56D !important" class="fab fa-whatsapp"></i></a>
+                                        <a target="_blank" class="btn btn-square" href="https://wa.me/<?php echo $item['s_whatsApp']; ?>"><i style="color: #D7B56D !important" class="fab fa-whatsapp"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_facebook']) { ?>
-                                    <a target="_blank" class="btn btn-square" href="<?php echo $item['s_facebook']; ?>"><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
+                                        <a target="_blank" class="btn btn-square" href="<?php echo $item['s_facebook']; ?>"><i style="color: #D7B56D !important" class="fab fa-facebook-f"></i></a>
                                     <?php   } ?>
                                     <?php if ($item['s_instagram']) { ?>
                                         <a target="_blank" class="btn btn-square" href="<?php echo $item['s_instagram']; ?>"><i style="color: #D7B56D !important" class="fab fa-instagram"></i></a>
@@ -234,15 +234,14 @@
                                 </div>
                             </div>
                             <div class="bg-secondary text-center p-4">
-                            <a href="<?php echo base_url('staff_single/'.$item['s_id']); ?>">
-                                <h5><?php echo $item['s_name_'.$this->session->userdata('site_lang')]; ?></h5>
+                                <a href="<?php echo base_url('staff_single/'.$item['s_id']); ?>">
+                                    <h5><?php echo $item['s_name_'.$this->session->userdata('site_lang')]; ?></h5>
                                 </a>
                                 <span style="color: #D7B56D !important" class="text-primary"><?php echo $item['p_name_'.$this->session->userdata('site_lang')]; ?></span>
                             </div>
                         </div>
                     </div>
                 <?php  } ?>
-
             </div>
         </div>
     </div>
