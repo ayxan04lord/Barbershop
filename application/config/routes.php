@@ -58,6 +58,7 @@ $route['service']            = "User_controller/service";
 $route['staff']              = "User_controller/staff";
 $route['staff/(.*)']         = "User_controller/staff/$1";
 $route['staff_single/(.*)']  = "User_controller/staff_single/$1";
+$route['coming']             = "User_controller/coming";
 
 
 $route['a_adminka']   = "Admin_controller/index";

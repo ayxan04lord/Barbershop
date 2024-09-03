@@ -9,6 +9,10 @@ class User_controller extends CI_Controller{
         $this->lang->load('message','en');
     }
 
+    public function coming(){
+        $this->load->view('user/comingsoon');
+    }
+
     public function index(){
         $data['staff'] = $this->db
         // ->select("s_id,s_name_az,s_name_en,s_name_ru, s_position,s_status,s_whatsApp,s_facebook,s_instagram,s_youtube,s_telegram,s_img,s_img_ex")
